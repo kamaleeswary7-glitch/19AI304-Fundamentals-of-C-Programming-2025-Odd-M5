@@ -38,8 +38,20 @@
   - **Step 11.2:** Print the swapped values (affects actual parameters).
 ### Step 12: 
   Stop
-# Program:
-# Output:
+# Program:#include<stdio.h>
+int main()
+{
+    int m=20,n=45;
+    printf("m is %d, n is %d\n",m,n);
+    int *p1=&m;
+    int *p2=&n;
+    *p1 =*p1+*p2;
+    *p2 =*p1-*p2;
+    *p1 =*p1-*p2;
+    printf("m is %d, n is %d",m,n);
+}
+# Output:![WhatsApp Image 2025-12-26 at 7 36 55 PM](https://github.com/user-attachments/assets/9d4390f3-fff6-42ed-af4a-09b10581296b)
+
 # Result: 
   Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -76,8 +88,39 @@
  - **Step 9.2:** Otherwise, return `fibo(x - 1) + fibo(x - 2)`.  
 ### Step 10:
   Stop
-# Program:
-# Output:
+# Program:include <stdio.h>
+
+// Recursive function to find Fibonacci number
+int fibonacci(int n) {
+    if (n == 0)
+        return 0;
+    else if (n == 1)
+        return 1;
+    else
+        return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+int main() {
+    int n, i;
+
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Please enter a positive integer.\n");
+        return 0;
+    }
+
+    printf("Fibonacci Series:\n");
+    for (i = 0; i < n; i++) {
+        printf("%d ", fibonacci(i));
+    }
+
+    return 0;
+
+# Output:![WhatsApp Image 2025-12-26 at 7 38 50 PM](https://github.com/user-attachments/assets/86591621-6d82-4550-93a2-89ecccd73fd9)
+
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -118,8 +161,40 @@ Thus, the program was implemented and executed successfully, and the required ou
   - **Step 11.4:** Recursively call `printEvenOdd(cur + 2, limit)` to print the next number.
 ### Step 12:
   Stop
-# Program:
-# Output:
+# Program:#include <stdio.h>
+
+// Recursive function to print numbers
+void printSequence(int start, int end) {
+    if (start > end)
+        return;
+
+    printf("%d ", start);
+    printSequence(start + 2, end);
+}
+
+int main() {
+    int lower, upper;
+
+    printf("Enter the lower limit: ");
+    scanf("%d", &lower);
+
+    printf("Enter the upper limit: ");
+    scanf("%d", &upper);
+
+    // Adjust lower limit to start with even or odd
+    if (lower % 2 != upper % 2) {
+        printf("No sequence possible with step 2.\n");
+        return 0;
+    }
+
+    printf("Sequence:\n");
+    printSequence(lower, upper);
+
+    return 0;
+}
+# Output:![WhatsApp Image 2025-12-26 at 7 39 40 PM](https://github.com/user-attachments/assets/4a3a5118-2543-4cbd-932d-5fd78a78e3ba)
+
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -160,8 +235,40 @@ Thus, the program was implemented and executed successfully, and the required ou
   Call `free(ptr);` to release the memory allocated by `calloc()`.
 ### Step 11:
   Stop
-# Program:
-# Output:
+# Program:#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n, i, sum = 0;
+    int *arr;
+
+    printf("Enter the number of integers: ");
+    scanf("%d", &n);
+
+    // Allocate memory using calloc
+    arr = (int *)calloc(n, sizeof(int));
+    if (arr == NULL) {
+        printf("Memory allocation failed.\n");
+        return 1;
+    }
+
+    // Input integers from user
+    printf("Enter %d integers:\n", n);
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+        sum += arr[i];  // compute sum
+    }
+
+    printf("Sum of the entered integers: %d\n", sum);
+
+    // Free allocated memory
+    free(arr);
+
+    return 0;
+}
+# Output:![Uploading WhatsApp Image 2025-12-26 at 7.39.40 PM.jpeg…]()
+
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -196,7 +303,19 @@ Thus, the program was implemented and executed successfully, and the required ou
   Return to the `main()` function after displaying the array.
 ### Step 10:
   Stop
-# Program:
-# Output:
+# Program:#include<stdio.h>
+int main()
+{
+    int n,i,arr[100];
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+        printf("%d ",arr[i]);
+    }
+    return 0;
+}
+# Output:![WhatsApp Image 2025-12-26 at 7 42 56 PM](https://github.com/user-attachments/assets/a788bdee-b6b1-44fb-95f0-a916e2520804)
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
